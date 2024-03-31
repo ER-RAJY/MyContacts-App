@@ -122,3 +122,7 @@
  input[type=file]::-webkit-file-upload-button{
      cursor: pointer;
  }
+ span{
+  font-size: 14px;
+  color: red;
+ }

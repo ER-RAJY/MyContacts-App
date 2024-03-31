@@ -1,53 +1,17 @@
-// let FirstName= document.querySelector("[name='F-name']");
-// let LastName= document.querySelector("[name='L-name']");
-// let phone= document.querySelector("[name='phone']");
-// let email= document.querySelector("[name='email']");
-// let Job= document.querySelector("[name='Job']");
-// let Company= document.querySelector("[name='Company']");
+// Define the fetchData function
+async function fetchData() {
+    const response = await fetch("Js/API.json");
+    const data = await response.json();
+    console.log(data);
+    displayContacts(data);
+}
 
-
-// document.onsubmit[0] = function(e){
-//     let FnameValid = false; 
-//     let LnameValid = false;
-//     let emailValid = false;
-//     let phoneValid = false;
-//     let JobValid = false;
-//     let CompanyValid = false;
-    
-
-//     if (FirstName !== "" && phone.ariaValueMax.length <= 10 ) {
-//         phoneValid = true ;
-//     }
-
-//     if (LastName !== "") {
-//         emailValid = true;
-//     }
-    
-//     if (phone !== "" && phone.ariaValueMax.length <= 10) {
-//         emailValid = true;
-//     }
-    
-//     if (email !== "") {
-//         emailValid = true;
-//     }
-    
-//     if (Job !== "") {
-//         emailValid = true;
-//     }
-    
-//     if (Company !== "") {
-//         emailValid = true;
-//     }
-
-//     if (phoneValid === false || emailValid === false) {
-//         e.preventDefault();
-//     }
-// }
-// document.links[0].onclick = function(event){
-//     console.log(event);
-//     event.preventDefault();
-// }
-
+// Your existing code for handling form submission
+let profilePic = document.getElementById("profile-pic");
+let inputFile = document.getElementById("input-file");
+inputFile.onchange = function () {
+    profilePic.src = URL.createObjectURL(inputFile.files[0]);
+}
 
 const form = document.getElementById("form");
 const inputs = form.querySelectorAll("input");
@@ -56,47 +20,53 @@ form.addEventListener("submit", submitHandler);
 
 function submitHandler(e) {
     e.preventDefault();
+
+    // Validation flag to check if all fields are valid
+    let isValid = true;
+
     inputs.forEach((input) => {
         const errorMessage = input.nextElementSibling;
         if (input.value.trim() === "") {
             errorMessage.textContent = `${input.dataset.type} is required`;
+            isValid = false;
         } else if (input.dataset.type === "Email" && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.value.trim())) {
             errorMessage.textContent = "Invalid email format";
+            isValid = false;
         } else if (input.dataset.type === "phone" && !/^06\d{8}$/.test(input.value.trim())) {
             errorMessage.textContent = "Phone number must start with 06 and have 10 digits in total";
+            isValid = false;
         } else {
             errorMessage.textContent = "";
         }
     });
-}
 
+    // If form is valid, proceed to add contact
+    if (isValid) {
+        const formData = new FormData(form);
+        const contactData = {};
 
-    let profilePic = document.getElementById("profile-pic");
-    let inputFile = document.getElementById("input-file");
-    inputFile.onchange = function () {
-        profilePic.src = URL.createObjectURL(inputFile.files[0]);
-    }
-
-    const formEL = document.querySelector('.form');
-    formEL.addEventListener('submit', event => {
-        event.preventDefault();
-        const formDta = new FormData(formEL);
-        const data = Object.fromEntries(formDta);
-
-        fetch("Js/API.json", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(responseData => {
-            console.log(responseData); // Log the response from the server
-            // Optionally, you can handle the response data here (e.g., display a success message)
-        })
-        .catch(error => {
-            console.error('Error:', error); // Log any errors that occur during the request
-            // Optionally, you can display an error message to the user
+        // Constructing the contact data object
+        formData.forEach((value, key) => {
+            contactData[key] = value;
         });
-    });
+
+        // Retrieve existing contacts from local storage
+        let existingContacts = localStorage.getItem("contacts");
+        existingContacts = existingContacts ? JSON.parse(existingContacts) : [];
+
+        // Add the new contact to the existing contacts array
+        existingContacts.push(contactData);
+
+        // Save the updated contacts back to local storage
+        localStorage.setItem("contacts", JSON.stringify(existingContacts));
+
+        // Reload the contact list after adding a new contact
+        fetchData();
+
+        // Optionally, you can perform additional actions here, such as displaying a success message or refreshing the contact list
+        console.log("Contact added successfully");
+
+        // Clear the form after adding the contact
+        form.reset();
+    }
+}

@@ -1,19 +1,19 @@
 [
     {
-        "full_name": "John Doe",
+        "full_name": "John Doepoly",
         "email": "john.doe@example.com",
         "phone_number": "+1234567890",
         "work": "Software Engineer",
         "company": "Tech Solutions Inc.",
-        "image_url": "https://mighty.tools/mockmind-api/content/human/37.jpg"
+        "image_url": "Img/placeholder.png"
     },
     {
-        "full_name": "Jane Smith",
+        "full_name": "Jane Smithhu",
         "email": "jane.smith@example.com",
         "phone_number": "+1987654321",
         "work": "Web Developer",
         "company": "WebTech LLC",
-        "image_url": "https://mighty.tools/mockmind-api/content/human/37.jpg"
+        "image_url": "Img/placeholder.png"
     },
     {
         "full_name": "Alice Johnson",
@@ -21,15 +21,15 @@
         "phone_number": "+1122334455",
         "work": "Data Scientist",
         "company": "Data Insights Corp",
-        "image_url": "https://mighty.tools/mockmind-api/content/human/26.jpg"
+        "image_url": "Img/placeholder.png"
     },
     {
-        "full_name": "Bob Brown",
+        "full_name": "Bob Brown tys",
         "email": "bob.brown@example.com",
         "phone_number": "+9988776655",
         "work": "Graphic Designer",
         "company": "Creative Designs Co.",
-        "image_url": "https://mighty.tools/mockmind-api/content/human/37.jpg"
+        "image_url": "Img/placeholder.png"
     },
     {
         "full_name": "Emily Davis",
@@ -37,7 +37,7 @@
         "phone_number": "+5544332211",
         "work": "Marketing Manager",
         "company": "Marketing Genius Group",
-        "image_url": "https://mighty.tools/mockmind-api/content/human/37.jpg"
+        "image_url": "Img/placeholder.png"
     },
     {
         "full_name": "Michael Wilson",
@@ -45,6 +45,6 @@
         "phone_number": "0664237233",
         "work": "Business Analyst",
         "company": "Analytics Solutions Inc.",
-        "image_url": "https://mighty.tools/mockmind-api/content/human/37.jpg"
+        "image_url": "Img/placeholder.png"
     }
 ]

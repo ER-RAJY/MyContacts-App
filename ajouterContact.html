@@ -1,69 +1,65 @@
 <!DOCTYPE html>
-<!---Coding By CodingLab | www.codinglabweb.com--->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--<title>Registration Form in HTML CSS</title>-->
-    <!---Custom CSS File--->
-    <link rel="stylesheet" href="Css/ajouterContact.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajouter Contact</title>
+    <link rel="stylesheet" href="Css/ajouterContact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
+</head>
+<body>
     <section class="container">
-      <header>ADD NEW CONTACT</header>
-      <form action="#" class="form">
-        <div class="input-box">
-            <div class="upload">
-                <img src="Img/noprofil.jpg" id="profile-pic" width = 100 height = 100 alt="">
-                <div class="round">
-                  <input type="file" accepte="" id="input-file">
-                  <i class = "fa fa-camera" style = "color: #fff;"></i>
+        <header>ADD NEW CONTACT</header>
+        <form id="form"  class="form">
+            <div class="input-box">
+                <div class="upload">
+                    <img src="Img/noprofil.jpg" id="profile-pic" width="100" height="100" alt="">
+                    <div class="round">
+                        <input type="file" accept="" id="input-file">
+                        <i class="fa fa-camera" style="color: #fff;"></i>
+                    </div>
                 </div>
-          </div>
-        <div class="column">
-            <div class="input-box">
-            <label>First Name</label>
-            <input type="text" placeholder="Enter First Name" required />
-            </div>
-            <div class="input-box">
-            <label>Last Name</label>
-            <input type="text" placeholder="Enter Last Name" required />
-            </div>
-        </div>
+                <div class="column">
+                    <div class="input-box">
+                        <label>First Name</label>
+                        <input type="text" placeholder="Enter First Name" name="F-name" data-type="First name">
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="input-box">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Enter Last Name" name="L-name" data-type="Last name">
+                        <span class="error-msg"></span>
+                    </div>
+                </div>
 
-        <div class="input-box">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="Enter phone number" required />
-          </div>
-        <div class="input-box">
-          <label>Email Address</label>
-          <input type="text" placeholder="Enter email address" required />
-        </div>
+                <div class="input-box">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="Enter phone number" data-type="phone">
+                    <span class="error-msg"></span>
+                </div>
+                <div class="input-box">
+                    <label>Email Address</label>
+                    <input type="text" name="email" placeholder="Enter email address" data-type="Email">
+                    <span class="error-msg"></span>
+                </div>
 
-        <div class="column">
-        <div class="input-box Job">
-          <label>Job</label>
-          <input type="text" placeholder="Enter Your Job" required />
-        </div>
-        <div class="input-box Job">
-          <label>Company</label>
-          <input type="text" placeholder="Enter Your Company" required />
-        </div>
-    </div>
-        <button>ADD</button>
-      </form>
+                <div class="column">
+                    <div class="input-box Job">
+                        <label>Job</label>
+                        <input type="text" placeholder="Enter Your Job" name="Job" data-type="Job">
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="input-box Job">
+                        <label>Company</label>
+                        <input type="text" placeholder="Enter Your Company" name="Company" data-type="Company">
+                        <span class="error-msg"></span>
+                    </div><img src="" alt="">
+                </div><IMG></IMG>
+                <button type="submit">ADD</button>
+        </form>
     </section>
     <!-- js file -->
-    <script src="JavaScript/ContactAjoute.js"></script>
-    <!-- js -->
-    <script>
-      let profilePic = document.getElementById("profile-pic");
-      let inputFile = document.getElementById("input-file");
-      inputFile.onchange = function(){
-          profilePic.src = URL.createObjectURL(inputFile.files[0]);
-      }
-  </script>
-  </body>
+    <script src="Js/ContactAjoute.js"></script>
+</body>
 </html>
