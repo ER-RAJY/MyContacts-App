@@ -2,42 +2,42 @@
     {
         "full_name": "John Doepoly",
         "email": "john.doe@example.com",
-        "phone_number": "+1234567890",
+        "phone_number": "0654422332",
         "work": "Software Engineer",
         "company": "Tech Solutions Inc.",
-        "image_url": "Img/placeholder.png"
+        "image_url": "https://images.generated.photos/FnGJcNjNv3Z7EhRmduWuEoUWsdZRm1QgisEsDmmKT0I/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODQ3NTMxLmpwZw.jpg"
     },
     {
         "full_name": "Jane Smithhu",
         "email": "jane.smith@example.com",
-        "phone_number": "+1987654321",
+        "phone_number": "0654425532",
         "work": "Web Developer",
         "company": "WebTech LLC",
-        "image_url": "Img/placeholder.png"
+        "image_url": "https://images.generated.photos/5j_TGfqDWskwIxi2N15FDqRUvIQkK6zXzACLj7IN4D0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Mjk4OTcxLmpwZw.jpg"
     },
     {
         "full_name": "Alice Johnson",
         "email": "alice.johnson@example.com",
-        "phone_number": "+1122334455",
+        "phone_number": "0654434342",
         "work": "Data Scientist",
         "company": "Data Insights Corp",
-        "image_url": "Img/placeholder.png"
+        "image_url": "https://images.generated.photos/mmb09ePfROAJM_W2y-wcwt-j7pvvspSGWZQvG1_x6iY/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MTYxNDUwLmpwZw.jpg"
     },
     {
         "full_name": "Bob Brown tys",
         "email": "bob.brown@example.com",
-        "phone_number": "+9988776655",
+        "phone_number": "0654425534",
         "work": "Graphic Designer",
         "company": "Creative Designs Co.",
-        "image_url": "Img/placeholder.png"
+        "image_url": "https://images.generated.photos/VtV0wOhdj1pEUvXWLn2CkmgsayDitHPIHOM3M3bi3-0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Nzk5NzMyLmpwZw.jpg"
     },
     {
         "full_name": "Emily Davis",
         "email": "emily.davis@example.com",
-        "phone_number": "+5544332211",
+        "phone_number": "0654425532",
         "work": "Marketing Manager",
         "company": "Marketing Genius Group",
-        "image_url": "Img/placeholder.png"
+        "image_url": "https://images.generated.photos/USmeji3cX0aKfctySEBwCN2u-G2ltz4w3yAsOS8JYDk/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTI4NDE3LmpwZw.jpg"
     },
     {
         "full_name": "Michael Wilson",
@@ -45,6 +45,6 @@
         "phone_number": "0664237233",
         "work": "Business Analyst",
         "company": "Analytics Solutions Inc.",
-        "image_url": "Img/placeholder.png"
+        "image_url": "https://images.generated.photos/eSJJAmSwmIFTU_8FVZ2zgTQEL9oWcclyoWj_OTuZi2s/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODE0MTEyLmpwZw.jpg"
     }
 ]

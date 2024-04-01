@@ -47,20 +47,20 @@
             background: #b384e3;
             transform: rotate();
         }
-        .btn2 , .btn3 {
-            margin-right: 14%;
-            height: 45px;
-            width: 28%;
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 400;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: #b787f7;
-            border-radius: 12px;
-            border-bottom: 3px solid rgb(159, 144, 144);
-        }
+        .btn2, .btn3 {
+    margin-right: -41px;
+    /* width: 21%; */
+    width: 24%;
+    color: #000000;
+    font-size: 14px;
+    /* font-weight: 400; */
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #b787f7;
+    border-radius: 12px;
+    border-bottom: 3px solid rgb(159, 144, 144);
+}
         .btn2:hover {
             background: #8358BA;
             transform: rotate();
@@ -76,12 +76,16 @@
         .card:hover{
             background-color: #edeaf0;
         }
+    
+        .form-control:not(:placeholder-shown) + .fas.fa-search {
+        display: none;
+    }
       
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="ContactList.html"><h1 style="font-weight: bolder ;color: #b787f7;">My Contacts</h1></a>
+        <a class="navbar-brand" href="ContactList.html"><h1 style="font-weight: bolder ;color: #b787f7;">My-Contacts</h1></a>
         
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
@@ -93,9 +97,11 @@
     </nav>
     
         <!-- Search Bar -->
-        <div style="position: relative; width: 300px; margin: 0 auto;">
-            <input type="text" class="form-control mx-auto" style="width: 100%; padding-right: 30px;" placeholder="        Search here...">
+        <div class="d-flex" style="position: relative; width: 300px; margin: 0 auto;">
+            <input type="text" id="searchInput" onkeyup="searchContacts()" class="form-control mx-auto" style="width: 100%; padding-right: 30px;" placeholder="       Search here...">
+
             <i class="fas fa-search" style="position: absolute; top: 50%; transform: translateY(-50%);color: #8358BA; right: 90%;"></i>
+            <button type="button" class="btn2"> Search</button>
           </div>
           
           
@@ -110,12 +116,12 @@
     <div class="modal fade" id="addContactModal" tabindex="-1" aria-labelledby="addContactModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addContactModalLabel">Add New Contact</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addContactModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                 <div class="modal-body">
                     <!-- Add your form elements here for adding new contact -->
                     <iframe src="ajouterContact.html" width="100%" height="500px" frameborder="0"></iframe>
@@ -124,49 +130,9 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS and Font Awesome (for icons) -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    
     <!-- JavaScript to fetch and display JSON data -->
-    <script>
-        async function fetchData() {
-            const response = await fetch("Js/API.json");
-            const data = await response.json();
-            console.log(data);
-            displayContacts(data);
-        }
-
-        function displayContacts(contacts) {
-            const contactList = document.getElementById('contactList');
-            contactList.innerHTML = '';
-            contacts.forEach(contact => {
-                const cardHtml = `
-                    <div  id="contenu"  class="col-md-4" style="box-shadow: 2px solid black;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="">
-                                    <img style="margin-top: 10px; margin-bottom: 43px; margin-left: 26%; width: 40%; height: 40%;  border-radius: 74px 22px 80px 22px;border: 1px solid #eaeaea;" src="${contact.image_url}" alt="">
-                                </div>
-                                <h4 style="font-weight: bolder; margin-left: 25%;" class="card-title">${contact.full_name}</h4>
-                                <p style="text-align:center;" class="card-text"> <span  style="color:#A5A5A5;">${contact.work} at</span>  </br> <span  style="font-weight: 650; color:#8358BA; ">${contact.company}</span></p>
-                                <p class="card-text"><i style=" margin-left: 88px;" class="fa-solid fa-phone"></i><span style="font-weight: bolder; margin-left: 10px;"> ${contact.phone_number}</span> </p>
-                                <p class="card-text"><i style=" margin-left: 50px;" class="fa-solid fa-envelope"></i><span style="font-weight: bolder; margin-left: 10px;"> ${contact.email}</span></p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                contactList.innerHTML += cardHtml;
-            });
-        }/* placeholder */
-
-
-
-        // Fetch data when the page loads
-        fetchData();
+    <script src="Js/ContactList.js">
+  
     </script>
       <!-- Bootstrap JS and Font Awesome (for icons) -->
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
