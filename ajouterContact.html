@@ -32,7 +32,6 @@
                         <span class="error-msg"></span>
                     </div>
                 </div>
-
                 <div class="input-box">
                     <label>Phone Number</label>
                     <input type="tel" name="phone" placeholder="Enter phone number" data-type="phone">
@@ -44,6 +43,7 @@
                     <span class="error-msg"></span>
                 </div>
 
+              
                 <div class="column">
                     <div class="input-box Job">
                         <label>Job</label>
@@ -55,11 +55,17 @@
                         <input type="text" placeholder="Enter Your Company" name="Company" data-type="Company">
                         <span class="error-msg"></span>
                     </div>
+                    <div class="input-box Job">
+                        <label id="Q">1+1</label>
+                        <input id="op" onchange="chal()" type="text" placeholder="" name="op" data-type="op">
+                        <span id="error"></span>
+                    </div>
                 </div>
                 <button type="submit">ADD</button>
             </div>
         </form>
     </section>
+    
     <!-- JavaScript files -->
     <script src="Js/ContactAjoute.js"></script>
 </body>

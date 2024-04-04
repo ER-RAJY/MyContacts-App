@@ -1,11 +1,10 @@
-// Define the contacts array globally
+
 let contacts = [];
 
 async function fetchData() {
     const response = await fetch("Js/API.json");
     const data = await response.json();
     console.log(data);
-    // Assign data to the global contacts array
     contacts = data;
     displayContacts(data);
 }
@@ -35,8 +34,6 @@ function displayContacts(contacts) {
         contactList.innerHTML += cardHtml;
     });
 }
-
-// Fetch data when the page loads
 fetchData();
 
 function deleteCard(btn) {
@@ -45,7 +42,7 @@ function deleteCard(btn) {
 
 function searchContacts() {
     const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-    console.log("Search term:", searchTerm); // Debugging
+    console.log("Search term:", searchTerm); 
 
     const filteredContacts = [];
     for (let i = 0; i < contacts.length; i++) {
@@ -57,6 +54,6 @@ function searchContacts() {
         }
     }
 
-    console.log("Filtered contacts:", filteredContacts); // Debugging
+    console.log("Filtered contacts:", filteredContacts); 
     displayContacts(filteredContacts);
 }
